@@ -4,7 +4,7 @@
 ARG NEURODEBIAN_VERSION=nd17.10-non-free
 FROM neurodebian:${NEURODEBIAN_VERSION}
 
-LABEL name="infotechsoft/mritools" \
+LABEL name="tjtaylor/mritools" \
 	release-date="2017-12-05" \
 	description="Neurodebian-based MRI Tools" \
 	mritools.neurodebian.url="http://neuro.debian.net/index.html" \
@@ -28,7 +28,7 @@ RUN apt-get update && \
 		fsl-complete \
 		python-dicom && \
 	mkdir /work && \
-	echo ". /etc/fsl/${FSL_VERSION}/fsl.sh" >> /root/.bashrc
+	echo ". /etc/fsl/5.0/fsl.sh" >> /root/.bashrc
 
 VOLUME /work
 WORKDIR /work
